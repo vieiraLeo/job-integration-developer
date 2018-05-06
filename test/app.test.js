@@ -23,13 +23,13 @@ var order = {
 
 chai.use(chaiHttp);
 
-describe('/POST order', function () {
-    it('Verifica se os atributos que são enviados para a plataforma de vendas estão corretos', function (done) {
+describe('/POST order',()=> {
+    it('Verifica se os atributos que são enviados para a plataforma de vendas estão corretos', (done)=> {
 
         chai.request(server)
             .post('/middleware/order')
             .send(order)
-            .end(function (error, res) {
+            .end((error, res)=> {
 
                 //Se o teste fuuncionar retorna status: 200 - OK
                 res.should.have.status(200);
@@ -41,13 +41,13 @@ describe('/POST order', function () {
     })
 })
 
-describe('/POST order', function () {
-    it('Deve retorar status (resposta) 400 devido a mudança no status_id. Verifica se a validação de envio esta funcionando', function (done) {
+describe('/POST order',()=> {
+    it('Deve retorar status (resposta) 400 devido a mudança no status_id. Verifica se a validação de envio esta funcionando',(done)=> {
         order.event.status_id = 1
         chai.request(server)
             .post('/middleware/order')
             .send(order)
-            .end(function (error, res) {
+            .end((error, res)=> {
                 res.should.have.status(400);
                 done();
             });
