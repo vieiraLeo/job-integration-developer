@@ -1,0 +1,43 @@
+{
+  "name": "job-integration-developer",
+  "version": "1.0.0",
+  "description": " Essa é um middleware criado para viabilizar e realizar a comunicação entre o sistema de rastreamento e a API da plataforma de vendas.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon",
+    "production": "pm2 start app.js --name backend",
+    "test": "mocha --timeout 10000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vieiraLeo/job-integration-developer.git"
+  },
+  "keywords": [
+    "middleware",
+    "intelipost",
+    "teste"
+  ],
+  "author": "Leonardo Vieira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vieiraLeo/job-integration-developer/issues"
+  },
+  "homepage": "https://github.com/vieiraLeo/job-integration-developer#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "express-query-int": "^3.0.0",
+    "lodash": "^4.17.10",
+    "mocha": "^5.1.1",
+    "mongoose": "^5.0.17",
+    "mongoose-paginate": "^5.0.3",
+    "pm2": "^2.10.3",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "chai-http": "^1.0.0",
+    "json-server": "^0.12.2",
+    "nodemon": "^1.17.3"
+  }
+}
