@@ -10,7 +10,7 @@ Após clonar o repositório navegue até a pasta job-integration-developer com o
 
 > npm install
 
-O comando npm install realiza o download e a instalação de todas as dependência necessarios para o funcionamento da aplicação, esse processo pode demorar um pouco.
+O comando npm install realiza o download e a instalação de todas as dependência necessarias para o funcionamento da aplicação, esse processo pode demorar um pouco.
 - Após o download e a instalação das dependências digite o comando:
 
 > json-server --watch db.json
@@ -34,18 +34,19 @@ além disso podemos rodar unit tests com:
 
 - Após rodar a aplicação com os comandos npm run dev ou npm run production já podemos enviar requisições com o metodo POST para http://localhost:3003/middleware/order
  
+OBS:Todos os documentos postados para a API Fake são salvos no arquivo db.json, para vericar basta o abrir.
 
 #### Tecnologias utilizadas
-Eu usei o [Node.Js](https://nodejs.org/en/) por ser uma plataforma ideal para tarefas de I/O, o [Node.Js](https://nodejs.org/en/) é não bloqueante,ou seja, nenhuma tarefas pesadas de IO vai travar a aplicação, pois elas serão executadas em background sem bloquear a aplicação.Além disso existem uma serie de modulos e bibliotecas disponibilizados pela comunidade que ajudam no desenvolvimento, aqui estão algumas das ferramentas que utilizei:
+Eu usei o [Node.Js](https://nodejs.org/en/) por ser uma plataforma ideal para tarefas de I/O, o [Node.Js](https://nodejs.org/en/) é não bloqueante,ou seja, nenhuma tarefas pesadas de IO vai travar a aplicação, pois elas serão executadas em background sem bloquear a aplicação, além disso existem uma serie de modulos e bibliotecas disponibilizados pela comunidade que ajudam no desenvolvimento, aqui estão algumas das ferramentas que utilizei:
 - [request-promise](https://www.npmjs.com/package/request-promise) essa ferramenta simplifica e auxilia o processo de resolução de promises, dexando o codigo menor e mais legivel
 - [mocha](https://www.npmjs.com/package/mocha) é um framework simples que ajuda na criação de unit tests
 - [nodemon](https://www.npmjs.com/package/nodemon) é uma dependência de desenvolvedor, esse módulo é um utilitário que irá monitorar todas as alterações nos arquivos da aplicação e reiniciar automaticamente o servidor quando for necessário
 
 #### Explicação sobre a solução
-_1 )_ A solução é bem simples, basicamente o servidor que roda em http://localhost:3003/middleware/order recebe as requisições POST do sistema externo (sistema de rastreamento)
-_2 )_ faz o parse do JSON recebido para um JavasCript Object
-_3 )_ valida o status da order, se ele for delivered o converte
-_4 )_ Cria o arquivo de options no formato:
+- A solução é bem simples, basicamente o servidor que roda em http://localhost:3003/middleware/order recebe as requisições POST do sistema externo (sistema de rastreamento)
+- faz o parse do JSON recebido para um JavasCript Object
+- valida o status da order, se ele for delivered o converte
+- Cria o arquivo de options no formato:
 	{
         method: 'post',
         body:  {
@@ -56,5 +57,5 @@ _4 )_ Cria o arquivo de options no formato:
         json: true,
         uri: url,
 	}
-_5 )_ Realiza o post do documento para a Plataforma de vendas
+- Realiza o post do documento para a Plataforma de vendas
 
