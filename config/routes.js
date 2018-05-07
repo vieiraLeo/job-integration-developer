@@ -46,8 +46,5 @@ module.exports = (server) => {
         else{
             res.status(400).send(`Informação não foi enviado o status é: ${odst[req.body.event.status_id]}`)
         }
-  
-
-
     })
 }
