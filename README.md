@@ -12,10 +12,10 @@ Após clonar o repositório navegue até a pasta job-integration-developer com o
 O comando npm install realiza o download e a instalação de todas as dependência necessarios para o funcionamento da aplicação, esse processo pode demorar um pouco.
 - Após o download e a instalação das dependências digite o comando:
 > json-server --watch db.json.
-```
+
 O json-server cria uma API Fake que roda em http://localhost:3000/order essa API tem a função de simular a plataforma de vendas. Caso queira testar com outra URL
 basta substitu-la no arquivo routes.js
-```
+
 - Mantenha o terminal com a API Fake aberto e rodando.
 - Abra o prompt de comando e navegue até job-integration-developer novamente
 - Podemos rodar a aplicação em modo de desenvolvimento com:
