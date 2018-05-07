@@ -7,20 +7,20 @@ Para rodar o projeto é necessario instalar o [Node.Js](https://nodejs.org/en/)
 ### Configuração e instalação
 Após clonar o repositório navegue até a pasta job-integration-developer com o prompt de comando:
 - Dentro da pasta digite o comando:
-> npm install
+> npm install.
 O comando npm install realiza o download e a instalação de todas as dependência necessarios para o funcionamento da aplicação, esse processo pode demorar um pouco.
 - Após o download e a instalação das dependências digite o comando:
-> json-server --watch db.json
+> json-server --watch db.json.
 O json-server cria uma API Fake que roda em http://localhost:3000/order essa API tem a função de simular a plataforma de vendas. Caso queira testar com outra URL
 basta substitu-la no arquivo routes.js
 - Mantenha o terminal com a API Fake aberto e rodando.
 - Abra o prompt de comando e navegue até job-integration-developer novamente
 - Podemos rodar a aplicação em modo de desenvolvimento com:
-> npm run dev
+> npm run dev.
 ou em modo de produção com:
-> npm run production
+> npm run production.
 além disso podemos rodar unit tests com:
-> npm run test
+> npm run test.
 - Após rodar a aplicação com os comandos npm run dev ou npm run production já podemos enviar requisições com o metodo POST para http://localhost:3003/middleware/order
  
 
